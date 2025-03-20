@@ -65,6 +65,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();  // Without the /api prefix
+app.MapControllers();
 
 app.Run();
