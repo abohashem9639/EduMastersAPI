@@ -35,9 +35,9 @@ builder.Services.AddCors(options =>
     });
 });
 
-
 builder.Services.AddAuthorization();
-// Remove these lines if present
+
+// Add Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -50,10 +50,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-
 var app = builder.Build();
 
-app.UseCors("AllowSpecificOrigin"); // استخدام نفس السياسة
+app.UseCors("AllowSpecificOrigin");
 
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -66,8 +65,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseStaticFiles();
-
-app.MapControllers();
+app.MapControllers();  // Without the /api prefix
 
 app.Run();
