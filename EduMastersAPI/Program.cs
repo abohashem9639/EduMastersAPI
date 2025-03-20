@@ -21,9 +21,8 @@ builder.Services.AddSwaggerGen();
 // Add DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 36)))
-        .EnableSensitiveDataLogging());  // تفعيل تسجيل البيانات الحساسة لمزيد من التفاصيل حول الأخطاء
-
+        new MySqlServerVersion(new Version(5, 5, 62)))
+        .EnableSensitiveDataLogging());
 
 // Add CORS
 builder.Services.AddCors(options =>
