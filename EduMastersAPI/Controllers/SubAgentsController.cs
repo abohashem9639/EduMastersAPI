@@ -4,7 +4,7 @@ using EduMastersAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class SubAgentsController : ControllerBase
 {

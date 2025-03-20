@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class StudentsController : ControllerBase
 {

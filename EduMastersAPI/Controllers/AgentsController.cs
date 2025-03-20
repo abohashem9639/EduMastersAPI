@@ -9,7 +9,7 @@ using System;
 
 namespace EduMastersAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AgentsController : ControllerBase
     {

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
 using System.Net;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class EmployeesController : ControllerBase
 {

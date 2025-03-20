@@ -4,7 +4,7 @@ using EduMastersAPI.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class ApplicationsController : ControllerBase
 {
