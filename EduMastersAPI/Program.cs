@@ -27,13 +27,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins", builder =>
+    options.AddPolicy("AllowSpecificOrigin", builder =>
     {
-        builder.AllowAnyOrigin()
+        builder.WithOrigins("https://edumasters-client.vercel.app")
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
 });
+
 
 builder.Services.AddAuthorization();
 // Remove these lines if present
@@ -52,10 +53,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
-app.UseCors(options =>
-{
-    options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-});
+app.UseCors("AllowSpecificOrigin"); // استخدام نفس السياسة
+
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
